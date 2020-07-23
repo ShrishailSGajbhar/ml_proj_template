@@ -14,6 +14,7 @@ MODEL = os.environ.get("MODEL")
 def predict():
     df = pd.read_csv(TEST_DATA)
     test_idx = df["id"].values
+    test_idx = test_idx.astype(int)
     predictions = None
 
     for FOLD in range(5):
